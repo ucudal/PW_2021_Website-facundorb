@@ -89,14 +89,14 @@ body {
 
  .informacion {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     height: 100%;
     position:absolute;
     width: 70%;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 20px;
-    background-color:teal;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color:white;
     top:0px;
     left: 30%;
 
