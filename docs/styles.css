@@ -56,7 +56,6 @@ body {
     flex-direction:column;
     height: 100%;
     position:fixed;
-    width: 30%;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 15px;
@@ -91,16 +90,12 @@ body {
     display:flex;
     flex-direction:column;
     height: 100%;
-    position:absolute;
-    width: 70%;
+    position:fixed;
     padding-bottom: 10px;
     padding-left: 0px;
     padding-right: 0px;
     background-color:white;
     top:0px;
-    left: 30%;
-
-
  }
 
 
