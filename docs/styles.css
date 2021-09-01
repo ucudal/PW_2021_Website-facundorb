@@ -56,9 +56,7 @@ body {
     flex-direction:column;
     height: 100%;
     position:fixed;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 15px;
+    padding-top: 0px;
     line-height: 0px;
     background-color:steelblue;
     top:0;
