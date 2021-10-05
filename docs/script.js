@@ -13,7 +13,7 @@ var Modal = function(otrasOpciones) {
   
     this.open = () => {
       if (this.modal) {
-        return;
+       // return;
       }
     
       this.modal = document.createElement('div');
