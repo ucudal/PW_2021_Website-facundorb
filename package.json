@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'"
+    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style.css --jit",
+    "tailwind:watch": "npm run tailwind -- --watch"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/ucudal/PW_2021_Website-facundorb/issues"
   },
-  "homepage": "https://github.com/ucudal/PW_2021_Website-facundorb#readme"
+  "homepage": "https://github.com/ucudal/PW_2021_Website-facundorb#readme",
+  "devDependencies": {
+    "tailwindcss-text-indent": "^1.0.2"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.11"
+  }
 }
