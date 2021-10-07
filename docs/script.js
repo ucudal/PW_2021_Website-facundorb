@@ -6,9 +6,7 @@ var Modal = function(otrasOpciones) {
       backdrop: true
     }
 
-    this.guardarDatos = () => {
-      this.close();
-    }
+    
   
     if(arguments[0] && typeof arguments[0] == "object") {
       this.opciones.contenido = arguments[0].contenido || this.opciones.contenido;
@@ -25,20 +23,31 @@ var Modal = function(otrasOpciones) {
     
       this.modal = document.createElement('div');
       this.modal.className = 'modal';
-      this.modal.style.cssText = 'position:absolute;width:50%;height:100%;opacity:1;left:30%;background:green';
+      this.modal.style.cssText = 'position:absolute;width:50%;height:50%;left:30%;background:grey;display:flex;align-content:center;flex-direction:column;';
       
 
     
       const modalText = document.createElement('h2');
       modalText.textContent = 'Por favor ingresa tus datos';
-      modalText.style.cssText = 'text-align: center;'
+      //modalText.style.cssText = 'text-align: center;'
 
       const modaltxtNombre = document.createElement('input');
-      modaltxtNombre.className = 'txtNombre';
+      modaltxtNombre.id = 'txtNombre';
       modaltxtNombre.placeholder = 'Ingrese su nombre';
-      modaltxtNombre.style.cssText = 'align-content: center;'
-      modaltxtNombre.style.cssText = 'placeholder:Ingresa tu nombre;'
-    
+      modaltxtNombre.style.cssText = 'placeholder:Ingresa tu nombre;align-content: center;width:50%;display:flex;margin-bottom: 15px;'
+
+      const modaltxtEmpresa = document.createElement('input');
+      modaltxtEmpresa.id = 'txtEmpresa';
+      modaltxtEmpresa.placeholder = 'Ingrese su Empresa';
+      modaltxtEmpresa.style.cssText = 'placeholder:Ingrese Empresa;align-content: center;width:50%;display:flex;margin-bottom: 15px;';
+
+      const modaltxtEmail = document.createElement('input');
+      modaltxtEmail.id = 'txtEmail';
+      modaltxtEmail.placeholder = 'Ingrese su Email';
+      modaltxtEmail.style.cssText = 'placeholder:Ingresa tu Email;width:50%;'
+       
+
+
       const modalCancelAction = document.createElement('button');
       modalCancelAction.style.cssText = 'bg-red-500 font-bold;';
       modalCancelAction.textContent = 'Cancelar';
@@ -49,11 +58,15 @@ var Modal = function(otrasOpciones) {
       modalConfirmAction.textContent = 'Guardar';
       modalConfirmAction.className = 'btn';
       modalConfirmAction.addEventListener('click', this.guardarDatos);
+
     
       this.modal.append(modalText);
       this.modal.append(modaltxtNombre);
-      this.modal.append(modalCancelAction);
+      this.modal.append(modaltxtEmpresa);
+      this.modal.append(modaltxtEmail);
       this.modal.append(modalConfirmAction);
+      this.modal.append(modalCancelAction);
+     
     
       document.body.append(this.modal);
     
@@ -66,6 +79,18 @@ var Modal = function(otrasOpciones) {
       if (this.opciones.backdrop === true) {
         this.backdrop.addEventListener('click', this.close);
       }
+
+    
+
+    }
+
+    this.guardarDatos = () => {
+      let nombre = document.getElementById("txtNombre").value;
+      let empresa = document.getElementById("txtEmpresa").value;
+      let email = document.getElementById("txtEmail").value;
+      let empleador = {nombre:nombre,empresa:empresa,email:email};
+      this.close();
+      alert(`Gracias por contactarme ${empleador.nombre} me pondré en contacto contigo a la brevedad`);
     }
   
     this.close = () => {
@@ -74,6 +99,8 @@ var Modal = function(otrasOpciones) {
       this.backdrop.remove();
       this.backdrop = null;
     }
+
+  
 
 
     return this;
