@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>CV Web Ramirez </title>
+</head>
+<body>
+    
+    
+    <div class="columna px-1 md:px-8 w-1/2 md:w-1/3"> 
+        <button id="contacto" class="bg-blue-500 text-white hover:bg-blue-700 font-bold absolute w-auto h-auto md:h-6 rounded md:w-16 py-2 px-0">Contacto</button>
+        <img src="images/avatar.jpg" alt="Imagen de perfil1" class="w-auto h-auto md:h-48  md:w-48  rounded-full mx-auto pt-3"> 
+        
+        <h1 class="text-base md:text-3xl font-bold">Facundo Ramirez</h1>
+        <hr></hr>
+        <p class="text-left py-2 text-xs md:text-base text-white prose-xl prose-indigo "> Estudiante avanzado de ingeniería en informática, enfocado a la gestión de proyectos, el liderazgo de equipos y las metodologías ágiles. <br> Soy una persona que aprende rápido, se adapta fácilmente a los cambios, responsable y comprometido.</p>
+        <hr> </hr>  
+        
+        <div class="text-left py-5 flex-col">
+
+        <div class="flex text-xs md:text-base"> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6  object-scale-down" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+
+        <a class="py-0.5 hover:text-blue-300 hover:underline" href="tel:091661210">091661210</a>
+        </div>
+
+        <div class="flex text-xs md:text-base py-1"> 
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <a class="py-0.5 text-xs md:text-base hover:text-blue-300 hover:underline" href = "mailto: facundoramirezb@gmail.com" >facundoramirezb@gmail.com</a>
+        </div>
+
+          <div class="flex text-xs md:text-base py-1"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span class="py-0.5">22/07/1997</span>
+        </div>
+
+
+        <div class="flex text-xs md:text-base py-1"> 
+        
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6 object-contain" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+
+        <span class="py-0.5">Montevideo,Uruguay</span>
+
+        </div>
+
+      
+
+        </div>
+                
+    </div>
+    
+    
+    <div class ="informacion w-1/2 md:w-2/3 left-1/2 md:left-1/3 flex-col md:flex-row overflow-auto	">
+        <div class ="bg-blue-300 h-5 md:h-10  py-0 text-left my-0">            
+                <h2 class="text-xs md:text-xl text-left font-bold ml-2 "> Experiencia Laboral </h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row h-60 py-1" id="InfoIntegra">
+
+            <h2 class="text-black text-left w-80 text-xs md:text-xl" id="fechaInt">-</h2>
+            <div class="flex flex-col relative  mb-1 w-full">
+                <h2 class="text-black text-left pb-0 mb-0 text-xs md:text-xl" id= "empresaInt"></h2>
+                <h3 class="pb-2 my-0 text-xs md:text-base" id="cargo"></h3>
+                <h3 class="pl-0 md:pl-6 text-xs md:text-base break-words" id="descripcion"> </h3>
+            </div>
+        </div>
+
+              
+        <div class ="bg-blue-300  h-5 md:h-10 py-0 my-1"> 
+            <h2 class="text-xs text-left font-bold md:text-xl ml-2"> Educación </h2>
+        </div>  
+
+
+         <div class="flex flex-col md:flex-row h-30">
+
+            <h2 class="text-black text-left w-80 h-auto text-xs md:text-xl">2017 - Actualidad</h2>
+            <div class="flex flex-col relative  mb-1 w-full">
+                <h2 class="text-black text-left pb-0 mb-0 text-xs md:text-xl">Ingeniería en Informática</h2>
+                <h3 class="pb-0 my-0 text-xs md:text-base"> Universidad Católica del Uruguay</h3>
+            </div>
+
+        </div>
+
+         <div class="flex flex-col md:flex-row h-30 my-1">
+         <h2 class="text-black text-left w-80 text-xs md:text-xl">2013 - 2017</h2>
+            <div class="flex flex-col relative  mb-1 w-full">
+                <h2 class="text-black text-left pb-0 mb-0 text-xs md:text-xl">Bachillerato Tecnológico</h2>
+                <h3 class="pb-2 my-0 text-xs md:text-base"> UTU Brazo Oriental</h3>
+            </div>
+ 
+  </div>
+
+   <div class ="bg-blue-300  h-5 md:h-10 py-0 my-1"> 
+            <h2 class="text-xs text-left font-bold md:text-xl ml-2"> Tecnologías </h2>
+        </div>  
+        <p class="pl-6 text-xs md:text-base pl-0 md:pl-6">• MySql • Sql.<br>
+                    • Java • Python • Javascript <br>
+                    • Asterisk <br>
+                    • Linux • Windows Server
+                </p>
+
+   
+
+        <div class="flex flex-row px-0 my-0">
+            
+        </div>
+    </div>  
+    <script src="script.js"></script>
+</body>
+
+</html>
