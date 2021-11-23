@@ -1,3 +1,44 @@
+var urlExp = "https://PW2021-APINode-facundorb.facundorb1.repl.co/experiencia-laboral";
+fetch(urlExp, {
+  method: "GET",
+  headers: {
+      "Content-Type": "application/json"
+  },
+}).then(function(response) {
+  response.text().then(function(ans){
+      let experiencia = JSON.parse(ans)['experiencia-laboral']
+      for(let i=0; i<ans.length; i++){
+          if(experiencia[i]){
+             console.log(experiencia[i]);
+          }
+      }
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var Modal = function(otrasOpciones) {
     this.modal = null;
     this.backdrop = true;
