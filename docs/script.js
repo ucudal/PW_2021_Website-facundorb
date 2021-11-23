@@ -1,6 +1,6 @@
 var Modal = function(otrasOpciones) {
     this.modal = null;
-    this.backdrop = null;
+    this.backdrop = true;
     this.opciones = {
       contenido: "",
       backdrop: true
@@ -21,9 +21,16 @@ var Modal = function(otrasOpciones) {
         return;
       }
     
+      if(this.opciones.backdrop) {
+        this.backdrop = document.createElement('div');
+        this.backdrop.className = 'backdrop';
+        this.backdrop.style.cssText = 'position:absolute;height:100%;width:100%;'
+        document.body.append(this.backdrop);
+      }
+
       this.modal = document.createElement('div');
       this.modal.className = 'modal';
-      this.modal.style.cssText = 'position:absolute;width:50%;height:50%;left:30%;background:grey;display:flex;align-content:center;flex-direction:column;';
+      this.modal.style.cssText = 'position:absolute;width:50%;height:50%;left:30%;background:#1E90FF;display:flex;align-content:center;flex-direction:column;';
       
 
     
@@ -49,7 +56,6 @@ var Modal = function(otrasOpciones) {
 
 
       const modalCancelAction = document.createElement('button');
-      modalCancelAction.style.cssText = 'bg-red-500 font-bold;';
       modalCancelAction.textContent = 'Cancelar';
       modalCancelAction.className = 'btn btn--alt';
       modalCancelAction.addEventListener('click', this.close);
@@ -70,11 +76,6 @@ var Modal = function(otrasOpciones) {
     
       document.body.append(this.modal);
     
-      if(this.opciones.backdrop) {
-        this.backdrop = document.createElement('div');
-        this.backdrop.className = 'backdrop';
-        document.body.append(this.backdrop);
-      }
     
       if (this.opciones.backdrop === true) {
         this.backdrop.addEventListener('click', this.close);
