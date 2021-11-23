@@ -6,7 +6,7 @@ fetch(urlExp, {
   },
 }).then(function(response) {
   response.text().then(function(ans){
-      let experiencia = JSON.parse(ans)['experiencia-laboral']
+      let experiencia = JSON.parse(JSON.stringify(ans))['experiencia-laboral']
       for(let i=0; i<ans.length; i++){
           if(experiencia[i]){
              console.log(experiencia[i]);
