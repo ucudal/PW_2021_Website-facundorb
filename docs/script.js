@@ -91,13 +91,14 @@ var Modal = function(otrasOpciones) {
       let empleador = {nombre:nombre,empresa:empresa,email:email};
       
       var enviar = {
-        name: document.getElementById("txtNombre").value,
+        nombreContact: document.getElementById("txtNombre").value,
         empresa: document.getElementById("txtEmpresa").value,
         email: document.getElementById("txtEmail").value,
     };
       
-    var jsonString = JSON.stringify(toSend);
-    var url = "http://localhost:3000/enviar-formulario";
+    var jsonString = JSON.stringify(enviar);
+    console.log(jsonString);
+    var url = "https://PW2021-APINode-facundorb.facundorb1.repl.co/enviar-formulario";
     fetch(url, {
         method: "POST",
         body: jsonString,
@@ -105,8 +106,11 @@ var Modal = function(otrasOpciones) {
             'Content-Type': 'application/json'
         }
     }).then(function (response) {
-      console.log(response+"TEST");
-      alert(`Gracias por contactarme ${empleador.nombre} me pondré en contacto contigo a la brevedad`);
+      if(response.ok) {
+        alert(`Gracias por contactarme ${empleador.nombre} me pondré en contacto contigo a la brevedad`);
+    }else{
+      alert(`Por favor compruebe los campos y vuelva a intentarlo`);
+    }
     })["catch"](function (error) {
         console.error(error);
     });
