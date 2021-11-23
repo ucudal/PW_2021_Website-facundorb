@@ -8,7 +8,7 @@ fetch(urlExp, {
   response.text().then(function(ans){
       let experiencia = JSON.parse(ans)['experiencia-laboral']
           if(experiencia[0]){
-             console.log(experiencia[0]);
+            
              fechaIntegra = experiencia[0].fechaInicio + " - " +experiencia[0].fechaFin;
              document.getElementById("fechaInt").textContent = fechaIntegra;
              document.getElementById("empresaInt").textContent = experiencia[0].empresa;
@@ -20,7 +20,6 @@ fetch(urlExp, {
 })
 
 
-console.log(document.cookie+"TEST");
 
 
 
@@ -143,7 +142,7 @@ var Modal = function(otrasOpciones) {
     };
       
     var jsonString = JSON.stringify(enviar);
-    console.log(jsonString);
+    
     var url = "https://PW2021-APINode-facundorb.facundorb1.repl.co/enviar-formulario";
     fetch(url, {
         method: "POST",
