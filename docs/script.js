@@ -89,8 +89,34 @@ var Modal = function(otrasOpciones) {
       let empresa = document.getElementById("txtEmpresa").value;
       let email = document.getElementById("txtEmail").value;
       let empleador = {nombre:nombre,empresa:empresa,email:email};
-      this.close();
+      
+      var enviar = {
+        name: document.getElementById("txtNombre").value,
+        empresa: document.getElementById("txtEmpresa").value,
+        email: document.getElementById("txtEmail").value,
+    };
+      
+    var jsonString = JSON.stringify(toSend);
+    var url = "http://localhost:3000/enviar-formulario";
+    fetch(url, {
+        method: "POST",
+        body: jsonString,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response) {
+      console.log(response+"TEST");
       alert(`Gracias por contactarme ${empleador.nombre} me pondré en contacto contigo a la brevedad`);
+    })["catch"](function (error) {
+        console.error(error);
+    });
+      
+      
+      
+      
+      this.close();
+
+      
     }
   
     this.close = () => {
