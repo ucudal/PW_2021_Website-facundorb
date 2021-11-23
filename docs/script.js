@@ -20,7 +20,7 @@ fetch(urlExp, {
 })
 
 
-
+console.log(document.cookie+"TEST");
 
 
 
