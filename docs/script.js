@@ -7,11 +7,15 @@ fetch(urlExp, {
 }).then(function(response) {
   response.text().then(function(ans){
       let experiencia = JSON.parse(ans)['experiencia-laboral']
-      for(let i=0; i<ans.length; i++){
-          if(experiencia[i]){
-             console.log(experiencia[i]);
+          if(experiencia[0]){
+             console.log(experiencia[0]);
+             fechaIntegra = experiencia[0].fechaInicio + " - " +experiencia[0].fechaFin;
+             document.getElementById("fechaInt").textContent = fechaIntegra;
+             document.getElementById("empresaInt").textContent = experiencia[0].empresa;
+             document.getElementById("cargo").textContent = experiencia[0].puesto;
+             document.getElementById("descripcion").textContent = experiencia[0].descripcion;
           }
-      }
+      
   })
 })
 
